@@ -10,6 +10,8 @@ namespace StudentAdminPortal.API.Repositories
     public class SqlStudentRepository : IStudentRepository
     {
         private readonly StudentAdminContext context;
+
+        // Hover cursor over the context and then Ctrl + . and choos: Create and assign property 'Context'
         public SqlStudentRepository(StudentAdminContext context)
         {
             this.context = context;
@@ -23,6 +25,8 @@ namespace StudentAdminPortal.API.Repositories
         public async Task<Student> GetStudentAsync(Guid studentId)
         {
             return await context.Student
+                // It takes a navigation property part in this case Gender and Address
+                // We add nameof to keep the type safe
                 .Include(nameof(Gender)).Include(nameof(Address))
                 .FirstOrDefaultAsync(x => x.Id == studentId);
         }

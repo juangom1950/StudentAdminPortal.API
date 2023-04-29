@@ -17,6 +17,7 @@ namespace StudentAdminPortal.API.Controllers
         private readonly IMapper mapper;
         private readonly IImageRepository imageRepository;
 
+        // Ctrl + . over IStudentRepository to implement the property and add the reference to this property.
         public StudentsController(IStudentRepository studentRepository, IMapper mapper,
             IImageRepository imageRepository)
         {
@@ -26,11 +27,14 @@ namespace StudentAdminPortal.API.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]")]
+        [Route("[controller]")]  // This will give me the controller name: Students
         public async Task<IActionResult> GetAllStudentsAsync()
         {
+            // This is comming from the Datamodel
             var students = await studentRepository.GetStudentsAsync();
 
+            // Converting from DataModel to DomainModel
+            // The 1st is the destination and de 2nd is the source
             return Ok(mapper.Map<List<Student>>(students));
         }
 

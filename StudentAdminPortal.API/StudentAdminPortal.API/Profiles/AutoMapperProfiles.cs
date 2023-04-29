@@ -9,6 +9,7 @@ namespace StudentAdminPortal.API.Profiles
     {
         public AutoMapperProfiles()
         {
+            // We do a reverse in case that we want map from Domain Model to Data Model
             CreateMap<DataModels.Student, Student>()
                 .ReverseMap();
 

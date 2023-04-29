@@ -51,6 +51,7 @@ namespace StudentAdminPortal.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StudentAdminPortal.API", Version = "v1" });
             });
 
+            // When the application start it is going to look for the outomapper profile
             services.AddAutoMapper(typeof(Startup).Assembly);
         }
 
