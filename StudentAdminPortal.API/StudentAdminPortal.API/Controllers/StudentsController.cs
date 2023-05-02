@@ -51,6 +51,7 @@ namespace StudentAdminPortal.API.Controllers
                 return NotFound();
             }
 
+            // Convert frokm a Data Model to a Domain Model
             return Ok(mapper.Map<Student>(student));
         }
 
@@ -65,6 +66,7 @@ namespace StudentAdminPortal.API.Controllers
 
                 if (updatedStudent != null)
                 {
+                    // Map from DataModel to DomainModel. This is going to be display in the front end.
                     return Ok(mapper.Map<Student>(updatedStudent));
                 }
             }

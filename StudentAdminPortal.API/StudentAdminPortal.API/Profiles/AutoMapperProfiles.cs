@@ -19,6 +19,8 @@ namespace StudentAdminPortal.API.Profiles
             CreateMap<DataModels.Address, Address>()
                 .ReverseMap();
 
+            // Source UpdateStudentRequest, Destination: DataModels.Student
+            // We do the AfterMap to be able to update the nested objects
             CreateMap<UpdateStudentRequest, DataModels.Student>()
                 .AfterMap<UpdateStudentRequestAfterMap>();
 

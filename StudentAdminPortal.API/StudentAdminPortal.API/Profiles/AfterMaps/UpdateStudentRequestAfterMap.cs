@@ -4,6 +4,7 @@ using DataModels = StudentAdminPortal.API.DataModels;
 
 namespace StudentAdminPortal.API.Profiles.AfterMaps
 {
+    // Here we implement the interface IMappingAction. Ctrl + .
     public class UpdateStudentRequestAfterMap : IMappingAction<UpdateStudentRequest, DataModels.Student>
     {
         public void Process(UpdateStudentRequest source, DataModels.Student destination, ResolutionContext context)

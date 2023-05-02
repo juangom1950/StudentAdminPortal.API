@@ -2,6 +2,7 @@
 
 namespace StudentAdminPortal.API.DomainModels
 {
+    // These are all the properties that I wan the user to change
     public class UpdateStudentRequest
     {
         public string FirstName { get; set; }

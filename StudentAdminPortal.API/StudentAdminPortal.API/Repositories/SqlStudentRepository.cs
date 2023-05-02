@@ -38,6 +38,7 @@ namespace StudentAdminPortal.API.Repositories
 
         public async Task<bool> Exists(Guid studentId)
         {
+            // We are checking if this table has any row
             return await context.Student.AnyAsync(x => x.Id == studentId);
         }
 

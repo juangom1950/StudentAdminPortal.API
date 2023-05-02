@@ -26,6 +26,7 @@ namespace StudentAdminPortal.API.Controllers
         {
             var genderList = await studentRepository.GetGendersAsync();
 
+            // Check if genderList is null or empty
             if(genderList == null || !genderList.Any())
             {
                 return NotFound();
